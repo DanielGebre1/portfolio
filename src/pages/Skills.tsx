@@ -238,6 +238,27 @@ export default function Skills() {
             </div>
           ))}
         </div>
+
+        {/* Other Technologies */}
+        <div className="mt-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Other Technologies</h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              "REST APIs", "WebSockets", "gRPC", "Microservices", "Event Sourcing", 
+              "CQRS", "DDD", "TDD", "Clean Architecture", "OAuth2", "JWT", 
+              "Elasticsearch", "RabbitMQ", "Kafka", "MongoDB", "Firebase", 
+              "Supabase", "Vercel", "Netlify", "GitHub Actions", "Jest", 
+              "Cypress", "Storybook", "Figma", "Linear", "Notion"
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="px-4 py-2 rounded-full text-sm font-medium bg-muted/50 text-muted-foreground border border-border/50 hover:border-primary/50 hover:text-primary transition-colors duration-200"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
