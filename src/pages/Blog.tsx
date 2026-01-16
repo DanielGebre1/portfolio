@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Clock, ArrowRight, Bot, Smartphone, Coins, Wrench } from "lucide-react";
+import { Clock, ArrowRight, Bot, Smartphone, Coins, Wrench, Mail, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 
 const categories = [
   { id: "all", label: "All" },
@@ -20,6 +22,8 @@ const articles = [
     category: "ai",
     readTime: "12 min",
     date: "2024-01-15",
+    month: "Jan",
+    day: "15",
     featured: true,
     gradient: "from-primary to-neon-blue",
   },
@@ -30,6 +34,8 @@ const articles = [
     category: "mobile",
     readTime: "8 min",
     date: "2024-01-10",
+    month: "Jan",
+    day: "10",
     featured: true,
     gradient: "from-accent to-neon-pink",
   },
@@ -40,6 +46,8 @@ const articles = [
     category: "blockchain",
     readTime: "15 min",
     date: "2024-01-05",
+    month: "Jan",
+    day: "05",
     featured: false,
     gradient: "from-neon-purple to-accent",
   },
@@ -50,6 +58,8 @@ const articles = [
     category: "engineering",
     readTime: "10 min",
     date: "2023-12-28",
+    month: "Dec",
+    day: "28",
     featured: false,
     gradient: "from-neon-blue to-primary",
   },
@@ -60,6 +70,8 @@ const articles = [
     category: "ai",
     readTime: "14 min",
     date: "2023-12-20",
+    month: "Dec",
+    day: "20",
     featured: false,
     gradient: "from-primary to-accent",
   },
@@ -70,6 +82,8 @@ const articles = [
     category: "mobile",
     readTime: "9 min",
     date: "2023-12-15",
+    month: "Dec",
+    day: "15",
     featured: false,
     gradient: "from-neon-pink to-neon-purple",
   },
@@ -130,7 +144,13 @@ export default function Blog() {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <article className="glass-hover rounded-2xl p-6 h-full flex flex-col">
-                    <div className={cn("h-2 w-20 rounded-full bg-gradient-to-r mb-4", article.gradient)} />
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={cn("h-2 w-20 rounded-full bg-gradient-to-r", article.gradient)} />
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-foreground">{article.day}</div>
+                        <div className="text-xs text-muted-foreground uppercase">{article.month}</div>
+                      </div>
+                    </div>
                     <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {article.title}
                     </h3>
@@ -165,6 +185,10 @@ export default function Blog() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <article className="glass-hover rounded-xl p-4 flex items-center gap-4">
+                  <div className="flex flex-col items-center justify-center w-12 flex-shrink-0">
+                    <span className="text-lg font-bold text-foreground">{article.day}</span>
+                    <span className="text-xs text-muted-foreground uppercase">{article.month}</span>
+                  </div>
                   <div className={cn("h-12 w-1 rounded-full bg-gradient-to-b flex-shrink-0", article.gradient)} />
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
@@ -173,7 +197,6 @@ export default function Blog() {
                     <p className="text-sm text-muted-foreground truncate">{article.excerpt}</p>
                   </div>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground flex-shrink-0">
-                    <span className="hidden sm:inline">{article.date}</span>
                     <span className="flex items-center gap-1">
                       <Clock className="h-3 w-3" />
                       {article.readTime}
@@ -182,6 +205,37 @@ export default function Blog() {
                 </article>
               </Link>
             ))}
+          </div>
+        </div>
+
+        {/* Stay Updated Section */}
+        <div className="mt-16 glass rounded-2xl p-8 animate-fade-in">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white mx-auto mb-6">
+              <Bell className="h-7 w-7" />
+            </div>
+            <h2 className="text-2xl font-bold text-foreground mb-3">Stay Updated</h2>
+            <p className="text-muted-foreground mb-6">
+              Get the latest articles on AI, mobile development, blockchain, and engineering delivered straight to your inbox.
+            </p>
+            <form 
+              onSubmit={(e) => {
+                e.preventDefault();
+                toast.success("Thanks for subscribing! You'll receive updates soon.");
+              }}
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
+              <Input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="glass border-muted-foreground/20 focus:border-primary"
+                required
+              />
+              <Button type="submit" className="btn-neon flex-shrink-0">
+                <Mail className="h-4 w-4 mr-2" />
+                Subscribe
+              </Button>
+            </form>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Code, Layout, Server, Smartphone, Brain, Coins, Gamepad2, Wrench } from "lucide-react";
+import { Code, Layout, Server, Smartphone, Brain, Coins, Gamepad2, Wrench, Database, Cloud, Shield, Palette } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const skillCategories = [
@@ -15,6 +15,8 @@ const skillCategories = [
       { name: "PHP", level: 80 },
       { name: "Solidity", level: 75 },
       { name: "SQL", level: 88 },
+      { name: "Go", level: 65 },
+      { name: "Rust", level: 55 },
     ],
   },
   {
@@ -28,6 +30,8 @@ const skillCategories = [
       { name: "Tailwind CSS", level: 92 },
       { name: "Framer Motion", level: 85 },
       { name: "Three.js", level: 70 },
+      { name: "SCSS/SASS", level: 88 },
+      { name: "Redux", level: 85 },
     ],
   },
   {
@@ -38,10 +42,24 @@ const skillCategories = [
       { name: "Node.js", level: 90 },
       { name: "Laravel", level: 88 },
       { name: "FastAPI", level: 82 },
+      { name: "Express.js", level: 88 },
       { name: "GraphQL", level: 80 },
-      { name: "PostgreSQL", level: 85 },
-      { name: "Redis", level: 78 },
-      { name: "MongoDB", level: 82 },
+      { name: "Django", level: 72 },
+      { name: "NestJS", level: 75 },
+    ],
+  },
+  {
+    title: "Database",
+    icon: <Database className="h-5 w-5" />,
+    gradient: "from-neon-blue to-neon-purple",
+    skills: [
+      { name: "PostgreSQL", level: 88 },
+      { name: "MongoDB", level: 85 },
+      { name: "Redis", level: 80 },
+      { name: "MySQL", level: 85 },
+      { name: "Firebase", level: 82 },
+      { name: "Supabase", level: 78 },
+      { name: "Prisma", level: 80 },
     ],
   },
   {
@@ -54,6 +72,7 @@ const skillCategories = [
       { name: "iOS (Swift)", level: 70 },
       { name: "Android (Kotlin)", level: 68 },
       { name: "Expo", level: 85 },
+      { name: "Ionic", level: 72 },
     ],
   },
   {
@@ -67,6 +86,8 @@ const skillCategories = [
       { name: "TensorFlow", level: 70 },
       { name: "Hugging Face", level: 75 },
       { name: "RAG Pipelines", level: 88 },
+      { name: "PyTorch", level: 68 },
+      { name: "Anthropic", level: 82 },
     ],
   },
   {
@@ -80,6 +101,7 @@ const skillCategories = [
       { name: "Ethers.js", level: 82 },
       { name: "IPFS", level: 75 },
       { name: "TheGraph", level: 72 },
+      { name: "Foundry", level: 65 },
     ],
   },
   {
@@ -93,20 +115,58 @@ const skillCategories = [
       { name: "Shader Graph", level: 68 },
       { name: "Photon Networking", level: 72 },
       { name: "Procedural Gen", level: 75 },
+      { name: "Unreal Engine", level: 55 },
     ],
   },
   {
-    title: "Tools & DevOps",
-    icon: <Wrench className="h-5 w-5" />,
+    title: "Cloud & DevOps",
+    icon: <Cloud className="h-5 w-5" />,
     gradient: "from-neon-blue to-primary",
     skills: [
-      { name: "Git", level: 95 },
+      { name: "AWS", level: 82 },
       { name: "Docker", level: 85 },
-      { name: "AWS", level: 80 },
-      { name: "CI/CD", level: 82 },
+      { name: "Kubernetes", level: 70 },
       { name: "Vercel", level: 90 },
-      { name: "Figma", level: 78 },
+      { name: "CI/CD", level: 82 },
+      { name: "Terraform", level: 65 },
+      { name: "GitHub Actions", level: 85 },
+    ],
+  },
+  {
+    title: "Tools",
+    icon: <Wrench className="h-5 w-5" />,
+    gradient: "from-accent to-primary",
+    skills: [
+      { name: "Git", level: 95 },
+      { name: "VS Code", level: 92 },
+      { name: "Postman", level: 88 },
+      { name: "Jira", level: 80 },
       { name: "Linux", level: 85 },
+      { name: "Vim", level: 72 },
+    ],
+  },
+  {
+    title: "Design",
+    icon: <Palette className="h-5 w-5" />,
+    gradient: "from-neon-pink to-accent",
+    skills: [
+      { name: "Figma", level: 85 },
+      { name: "Adobe XD", level: 75 },
+      { name: "Photoshop", level: 72 },
+      { name: "UI/UX Design", level: 80 },
+      { name: "Responsive Design", level: 90 },
+    ],
+  },
+  {
+    title: "Testing & Security",
+    icon: <Shield className="h-5 w-5" />,
+    gradient: "from-primary to-neon-purple",
+    skills: [
+      { name: "Jest", level: 85 },
+      { name: "Cypress", level: 78 },
+      { name: "Playwright", level: 75 },
+      { name: "OWASP", level: 70 },
+      { name: "Penetration Testing", level: 65 },
     ],
   },
 ];
@@ -139,17 +199,17 @@ export default function Skills() {
         <div className="mb-16 animate-fade-in">
           <h1 className="text-4xl font-bold text-foreground mb-4">Skills</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            A comprehensive toolkit spanning frontend, backend, mobile, AI, blockchain, and game development.
+            A comprehensive toolkit spanning frontend, backend, mobile, AI, blockchain, game development, and more.
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
               className="glass-hover rounded-2xl p-6 animate-fade-in"
-              style={{ animationDelay: `${categoryIndex * 0.1}s` }}
+              style={{ animationDelay: `${categoryIndex * 0.05}s` }}
             >
               {/* Header */}
               <div className="flex items-center gap-3 mb-6">
@@ -160,7 +220,7 @@ export default function Skills() {
               </div>
 
               {/* Skills with Progress Bars */}
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-1">
@@ -170,7 +230,7 @@ export default function Skills() {
                     <AnimatedProgressBar 
                       level={skill.level} 
                       gradient={category.gradient}
-                      delay={(categoryIndex * 100) + (skillIndex * 50) + 300}
+                      delay={(categoryIndex * 80) + (skillIndex * 40) + 200}
                     />
                   </div>
                 ))}

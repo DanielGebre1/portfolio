@@ -1,4 +1,4 @@
-import { Bot, FileCode, Coins, Gamepad2, Play, ExternalLink } from "lucide-react";
+import { Bot, FileCode, Coins, Gamepad2, Play, ExternalLink, Lightbulb, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -146,6 +146,27 @@ export default function Playground() {
               Voice-controlled AI coding assistant demo
             </li>
           </ul>
+        </div>
+
+        {/* Have an Idea Section */}
+        <div className="mt-12 glass rounded-2xl p-8 animate-fade-in text-center">
+          <div className="max-w-2xl mx-auto">
+            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white mx-auto mb-6">
+              <Lightbulb className="h-8 w-8" />
+            </div>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Have an Idea?</h2>
+            <p className="text-muted-foreground mb-6">
+              Got a cool experiment or demo you'd like to see? I'm always looking for interesting challenges and creative projects to explore.
+            </p>
+            <Button asChild className="btn-neon group">
+              <a href="/contact">
+                <span className="flex items-center gap-2">
+                  Share Your Idea
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
