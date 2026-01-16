@@ -6,6 +6,7 @@ const caseStudies = [
   {
     id: 1,
     title: "AI Assistant Platform",
+    year: "2024",
     icon: <Bot className="h-6 w-6" />,
     gradient: "from-primary to-neon-blue",
     problem: "Enterprise clients needed a conversational AI that could understand domain-specific terminology and integrate with existing systems.",
@@ -25,6 +26,7 @@ const caseStudies = [
   {
     id: 2,
     title: "Super App Platform",
+    year: "2023",
     icon: <Smartphone className="h-6 w-6" />,
     gradient: "from-accent to-neon-pink",
     problem: "Create a unified mobile platform consolidating multiple services (payments, delivery, social) for millions of users.",
@@ -44,6 +46,7 @@ const caseStudies = [
   {
     id: 3,
     title: "DeFi Crowdfunding",
+    year: "2023",
     icon: <Coins className="h-6 w-6" />,
     gradient: "from-neon-purple to-accent",
     problem: "Traditional crowdfunding lacks transparency in fund usage. Backers have no control once funds are transferred.",
@@ -63,6 +66,7 @@ const caseStudies = [
   {
     id: 4,
     title: "3D Action RPG",
+    year: "2022",
     icon: <Gamepad2 className="h-6 w-6" />,
     gradient: "from-neon-pink to-primary",
     problem: "Create an engaging action game with intelligent enemy AI, smooth combat, and replayable procedural content.",
@@ -117,7 +121,10 @@ export default function CaseStudies() {
                     <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${study.gradient} flex items-center justify-center text-white`}>
                       {study.icon}
                     </div>
-                    <h2 className="text-2xl font-bold text-foreground">{study.title}</h2>
+                    <div className="flex-1">
+                      <h2 className="text-2xl font-bold text-foreground">{study.title}</h2>
+                      <span className="text-sm text-muted-foreground">{study.year}</span>
+                    </div>
                   </div>
 
                   {/* Problem & Solution */}

@@ -1,14 +1,8 @@
-import { Bot, Smartphone, Coins, Gamepad2, Download, ArrowRight } from "lucide-react";
+import { Bot, Smartphone, Coins, Gamepad2, Download, ArrowRight, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TypingEffect } from "@/components/home/TypingEffect";
 import { TechStatusCard } from "@/components/home/TechStatusCard";
 import { ProjectCard } from "@/components/home/ProjectCard";
-import {
-  AIArchitecture,
-  MobileArchitecture,
-  BlockchainArchitecture,
-  GameArchitecture,
-} from "@/components/home/ArchitectureDiagrams";
 import { Link } from "react-router-dom";
 
 const techStack = [
@@ -32,7 +26,6 @@ const projects = [
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: "/case-studies",
-    architectureSvg: <AIArchitecture />,
     gradient: "bg-gradient-to-br from-primary to-neon-blue",
   },
   {
@@ -43,7 +36,6 @@ const projects = [
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: "/case-studies",
-    architectureSvg: <MobileArchitecture />,
     gradient: "bg-gradient-to-br from-accent to-neon-pink",
   },
   {
@@ -54,7 +46,6 @@ const projects = [
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: "/case-studies",
-    architectureSvg: <BlockchainArchitecture />,
     gradient: "bg-gradient-to-br from-neon-purple to-accent",
   },
   {
@@ -65,7 +56,6 @@ const projects = [
     liveUrl: "#",
     githubUrl: "#",
     caseStudyUrl: "/case-studies",
-    architectureSvg: <GameArchitecture />,
     gradient: "bg-gradient-to-br from-neon-pink to-primary",
   },
 ];
@@ -125,6 +115,26 @@ const Index = () => {
                   Download Resume
                 </Button>
               </div>
+
+              {/* Social Icons */}
+              <div className="flex gap-4 animate-fade-in stagger-4">
+                <a 
+                  href="https://github.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 glass rounded-xl text-muted-foreground hover:text-primary hover:border-primary/50 border border-transparent transition-all"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 glass rounded-xl text-muted-foreground hover:text-primary hover:border-primary/50 border border-transparent transition-all"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
             </div>
 
             {/* Right Content - Tech Status Card */}
@@ -144,7 +154,7 @@ const Index = () => {
                 Industry-Level Projects
               </h2>
               <p className="text-muted-foreground">
-                Hover over cards to see system architecture
+                Explore my featured work
               </p>
             </div>
             <Button variant="ghost" asChild className="text-primary hover:text-primary/80">
