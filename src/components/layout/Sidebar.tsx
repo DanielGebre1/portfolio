@@ -26,10 +26,11 @@ const navItems = [
 
 interface SidebarProps {
   onOpenSearch: () => void;
+  isCollapsed: boolean;
+  onCollapsedChange: (collapsed: boolean) => void;
 }
 
-export function Sidebar({ onOpenSearch }: SidebarProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+export function Sidebar({ onOpenSearch, isCollapsed, onCollapsedChange }: SidebarProps) {
   const location = useLocation();
 
   return (
@@ -45,13 +46,13 @@ export function Sidebar({ onOpenSearch }: SidebarProps) {
           {!isCollapsed && (
             <Link to="/" className="flex items-center gap-2">
               <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-sm font-bold text-primary-foreground">JD</span>
+                <span className="text-sm font-bold text-primary-foreground">DG</span>
               </div>
-              <span className="font-semibold text-foreground">Portfolio</span>
+              <span className="font-semibold text-foreground">Daniel Gebre</span>
             </Link>
           )}
           <button
-            onClick={() => setIsCollapsed(!isCollapsed)}
+            onClick={() => onCollapsedChange(!isCollapsed)}
             className="p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
           >
             {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}

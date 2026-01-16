@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Github, BookOpen } from "lucide-react";
+import { Github, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ProjectCardProps {
@@ -10,7 +10,6 @@ interface ProjectCardProps {
   liveUrl?: string;
   githubUrl?: string;
   caseStudyUrl?: string;
-  architectureSvg?: React.ReactNode;
   gradient: string;
 }
 
@@ -22,7 +21,6 @@ export function ProjectCard({
   liveUrl,
   githubUrl,
   caseStudyUrl,
-  architectureSvg,
   gradient,
 }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -82,16 +80,6 @@ export function ProjectCard({
             </span>
           ))}
         </div>
-
-        {/* Architecture Diagram (hover state) */}
-        {architectureSvg && isHovered && (
-          <div className="absolute inset-0 rounded-2xl glass flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="text-center">
-              <p className="text-xs text-muted-foreground mb-4">System Architecture</p>
-              {architectureSvg}
-            </div>
-          </div>
-        )}
 
         {/* Actions */}
         <div className="flex gap-2 mt-auto pt-4 border-t border-border/30">
