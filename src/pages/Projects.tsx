@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Bot, Smartphone, Coins, Gamepad2, Globe, Database, ExternalLink, Github, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const categories = [
   { id: "all", label: "All" },
@@ -20,7 +21,7 @@ const projects = [
     icon: <Bot className="h-6 w-6" />,
     category: "ai",
     techStack: ["OpenAI", "LangChain", "Next.js", "Python", "Pinecone"],
-    liveUrl: "#",
+    demoUrl: "/demo/ai-assistant",
     githubUrl: "#",
     gradient: "from-primary to-neon-blue",
   },
@@ -31,7 +32,7 @@ const projects = [
     icon: <Smartphone className="h-6 w-6" />,
     category: "mobile",
     techStack: ["React Native", "Laravel", "Redis", "AWS", "PostgreSQL"],
-    liveUrl: "#",
+    demoUrl: "/demo/super-app",
     githubUrl: "#",
     gradient: "from-accent to-neon-pink",
   },
@@ -42,7 +43,7 @@ const projects = [
     icon: <Coins className="h-6 w-6" />,
     category: "blockchain",
     techStack: ["Solidity", "Hardhat", "Web3.js", "IPFS", "TheGraph"],
-    liveUrl: "#",
+    demoUrl: "/demo/blockchain",
     githubUrl: "#",
     gradient: "from-neon-purple to-accent",
   },
@@ -53,7 +54,7 @@ const projects = [
     icon: <Gamepad2 className="h-6 w-6" />,
     category: "games",
     techStack: ["Unity", "C#", "Photon", "Blender", "Shader Graph"],
-    liveUrl: "#",
+    demoUrl: "/demo/unity-game",
     githubUrl: "#",
     gradient: "from-neon-pink to-primary",
   },
@@ -64,7 +65,7 @@ const projects = [
     icon: <Globe className="h-6 w-6" />,
     category: "fullstack",
     techStack: ["React", "Node.js", "D3.js", "ClickHouse", "Redis"],
-    liveUrl: "#",
+    demoUrl: "/demo/analytics",
     githubUrl: "#",
     gradient: "from-neon-blue to-primary",
   },
@@ -75,7 +76,7 @@ const projects = [
     icon: <Bot className="h-6 w-6" />,
     category: "ai",
     techStack: ["Stable Diffusion", "FastAPI", "Redis", "S3", "React"],
-    liveUrl: "#",
+    demoUrl: "/demo/ai-image",
     githubUrl: "#",
     gradient: "from-primary to-accent",
   },
@@ -86,7 +87,7 @@ const projects = [
     icon: <Coins className="h-6 w-6" />,
     category: "blockchain",
     techStack: ["Solidity", "Next.js", "Moralis", "IPFS", "Polygon"],
-    liveUrl: "#",
+    demoUrl: "/demo/nft-marketplace",
     githubUrl: "#",
     gradient: "from-accent to-neon-purple",
   },
@@ -97,7 +98,7 @@ const projects = [
     icon: <Smartphone className="h-6 w-6" />,
     category: "mobile",
     techStack: ["Flutter", "Firebase", "TensorFlow Lite", "HealthKit"],
-    liveUrl: "#",
+    demoUrl: "/demo/fitness-app",
     githubUrl: "#",
     gradient: "from-neon-pink to-accent",
   },
@@ -178,10 +179,10 @@ export default function Projects() {
               {/* Actions */}
               <div className="flex gap-2 pt-4 border-t border-border/30">
                 <Button variant="ghost" size="sm" className="flex-1 text-primary hover:text-primary hover:bg-primary/10" asChild>
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                  <Link to={project.demoUrl}>
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Demo
-                  </a>
+                  </Link>
                 </Button>
                 <Button variant="ghost" size="sm" className="flex-1" asChild>
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">

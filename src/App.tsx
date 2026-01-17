@@ -12,6 +12,14 @@ import Playground from "./pages/Playground";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import AIAssistantDemo from "./pages/demos/AIAssistantDemo";
+import SuperAppDemo from "./pages/demos/SuperAppDemo";
+import BlockchainDemo from "./pages/demos/BlockchainDemo";
+import UnityGameDemo from "./pages/demos/UnityGameDemo";
+import AnalyticsDashboardDemo from "./pages/demos/AnalyticsDashboardDemo";
+import AIImageGenDemo from "./pages/demos/AIImageGenDemo";
+import NFTMarketplaceDemo from "./pages/demos/NFTMarketplaceDemo";
+import FitnessAppDemo from "./pages/demos/FitnessAppDemo";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +38,14 @@ const App = () => (
             <Route path="/playground" element={<Playground />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/demo/ai-assistant" element={<AIAssistantDemo />} />
+            <Route path="/demo/super-app" element={<SuperAppDemo />} />
+            <Route path="/demo/blockchain" element={<BlockchainDemo />} />
+            <Route path="/demo/unity-game" element={<UnityGameDemo />} />
+            <Route path="/demo/analytics" element={<AnalyticsDashboardDemo />} />
+            <Route path="/demo/ai-image" element={<AIImageGenDemo />} />
+            <Route path="/demo/nft-marketplace" element={<NFTMarketplaceDemo />} />
+            <Route path="/demo/fitness-app" element={<FitnessAppDemo />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
