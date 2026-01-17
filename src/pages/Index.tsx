@@ -110,9 +110,15 @@ const Index = () => {
                     </span>
                   </Link>
                 </Button>
-                <Button variant="outline" className="glass border-primary/30 hover:bg-primary/10 hover:border-primary">
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Resume
+                <Button 
+                  variant="outline" 
+                  className="glass border-primary/30 hover:bg-primary/10 hover:border-primary"
+                  asChild
+                >
+                  <a href="/resume.pdf" download="John_Doe_Resume.pdf">
+                    <Download className="h-4 w-4 mr-2" />
+                    Download Resume
+                  </a>
                 </Button>
               </div>
 

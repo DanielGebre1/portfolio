@@ -1,0 +1,127 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2500 >>
+stream
+BT
+/F2 24 Tf
+50 740 Td
+(JOHN DOE) Tj
+/F1 10 Tf
+0 -18 Td
+(Senior Full-Stack Developer) Tj
+0 -14 Td
+(john.doe@email.com | +1 555-123-4567 | San Francisco, CA) Tj
+0 -14 Td
+(github.com/johndoe | linkedin.com/in/johndoe) Tj
+/F2 14 Tf
+0 -35 Td
+(PROFESSIONAL SUMMARY) Tj
+/F1 10 Tf
+0 -18 Td
+(Full-Stack Developer with 6+ years of experience building scalable web applications.) Tj
+0 -14 Td
+(Expert in React, TypeScript, Node.js, and cloud technologies. Passionate about clean) Tj
+0 -14 Td
+(architecture, performance optimization, and delivering exceptional user experiences.) Tj
+/F2 14 Tf
+0 -35 Td
+(TECHNICAL SKILLS) Tj
+/F1 10 Tf
+0 -18 Td
+(Frontend: React, TypeScript, Next.js, Vue.js, Tailwind CSS, Framer Motion) Tj
+0 -14 Td
+(Backend: Node.js, Python, Go, PostgreSQL, MongoDB, Redis, GraphQL) Tj
+0 -14 Td
+(DevOps: Docker, Kubernetes, AWS, GCP, CI/CD, GitHub Actions, Terraform) Tj
+0 -14 Td
+(Other: REST APIs, WebSockets, gRPC, Microservices, TDD, Clean Architecture) Tj
+/F2 14 Tf
+0 -35 Td
+(EXPERIENCE) Tj
+/F2 11 Tf
+0 -20 Td
+(Senior Full-Stack Developer | Tech Corp) Tj
+/F1 10 Tf
+350 0 Td
+(2021 - Present) Tj
+-350 -14 Td
+(- Led development of microservices architecture serving 2M+ users daily) Tj
+0 -14 Td
+(- Reduced API response times by 60% through caching and query optimization) Tj
+0 -14 Td
+(- Mentored team of 5 junior developers, improving code quality by 40%) Tj
+0 -14 Td
+(- Implemented CI/CD pipelines reducing deployment time from 2 hours to 15 minutes) Tj
+/F2 11 Tf
+0 -25 Td
+(Full-Stack Developer | StartupXYZ) Tj
+/F1 10 Tf
+350 0 Td
+(2019 - 2021) Tj
+-350 -14 Td
+(- Built real-time collaboration platform using React and WebSockets) Tj
+0 -14 Td
+(- Designed and implemented RESTful APIs handling 100K+ requests/day) Tj
+0 -14 Td
+(- Integrated third-party services including Stripe, Auth0, and AWS S3) Tj
+/F2 11 Tf
+0 -25 Td
+(Software Developer | Digital Agency) Tj
+/F1 10 Tf
+350 0 Td
+(2017 - 2019) Tj
+-350 -14 Td
+(- Developed 20+ responsive web applications for enterprise clients) Tj
+0 -14 Td
+(- Created reusable component libraries reducing development time by 30%) Tj
+/F2 14 Tf
+0 -35 Td
+(EDUCATION) Tj
+/F2 11 Tf
+0 -20 Td
+(Bachelor of Science in Computer Science) Tj
+/F1 10 Tf
+0 -14 Td
+(University of California, Berkeley | 2017) Tj
+/F2 14 Tf
+0 -35 Td
+(PROJECTS) Tj
+/F1 10 Tf
+0 -18 Td
+(E-Commerce Platform: Built full-stack e-commerce with React, Node.js, Stripe) Tj
+0 -14 Td
+(AI Dashboard: Real-time analytics platform with ML predictions and D3.js charts) Tj
+0 -14 Td
+(DevOps Toolkit: Open-source CLI tool for automating deployment workflows) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+0000002820 00000 n 
+0000002897 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2980
+%%EOF
