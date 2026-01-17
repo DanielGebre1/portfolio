@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bot, Smartphone, Coins, Gamepad2, Globe, Database, ExternalLink, Github, BookOpen } from "lucide-react";
+import { Bot, Smartphone, Coins, Gamepad2, Globe, Database, ExternalLink, Github, BookOpen, Briefcase, LayoutDashboard, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ const categories = [
   { id: "blockchain", label: "Blockchain" },
   { id: "games", label: "Games" },
   { id: "fullstack", label: "Full-Stack" },
+  { id: "enterprise", label: "Enterprise" },
 ];
 
 const projects = [
@@ -101,6 +102,39 @@ const projects = [
     demoUrl: "/demo/fitness-app",
     githubUrl: "#",
     gradient: "from-neon-pink to-accent",
+  },
+  {
+    id: "job-scholarship-platform",
+    title: "Job & Scholarship Platform",
+    description: "Enterprise-grade application platform with AI resume screening, job-candidate matching, and complete workflow management.",
+    icon: <Briefcase className="h-6 w-6" />,
+    category: "enterprise",
+    techStack: ["React", "Next.js", "Laravel", "AI Resume Analyzer", "Cloud Storage"],
+    demoUrl: "/demo/job-platform",
+    githubUrl: "#",
+    gradient: "from-primary to-neon-purple",
+  },
+  {
+    id: "admin-dashboard",
+    title: "Enterprise Admin Dashboard",
+    description: "Comprehensive admin system with role-based access control, real-time analytics, and system monitoring.",
+    icon: <LayoutDashboard className="h-6 w-6" />,
+    category: "enterprise",
+    techStack: ["React", "Laravel", "Charts", "RBAC", "System Logs"],
+    demoUrl: "/demo/admin-dashboard",
+    githubUrl: "#",
+    gradient: "from-neon-blue to-neon-purple",
+  },
+  {
+    id: "ai-lms",
+    title: "AI Learning Management System",
+    description: "Intelligent LMS with AI tutor, personalized learning paths, courses, lessons, quizzes, and progress tracking.",
+    icon: <GraduationCap className="h-6 w-6" />,
+    category: "ai",
+    techStack: ["Next.js", "Laravel", "AI Tutor", "Progress Tracking"],
+    demoUrl: "/demo/ai-lms",
+    githubUrl: "#",
+    gradient: "from-accent to-primary",
   },
 ];
 

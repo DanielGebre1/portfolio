@@ -20,6 +20,9 @@ import AnalyticsDashboardDemo from "./pages/demos/AnalyticsDashboardDemo";
 import AIImageGenDemo from "./pages/demos/AIImageGenDemo";
 import NFTMarketplaceDemo from "./pages/demos/NFTMarketplaceDemo";
 import FitnessAppDemo from "./pages/demos/FitnessAppDemo";
+import JobPlatformDemo from "./pages/demos/JobPlatformDemo";
+import AdminDashboardDemo from "./pages/demos/AdminDashboardDemo";
+import AILMSDemo from "./pages/demos/AILMSDemo";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +49,9 @@ const App = () => (
             <Route path="/demo/ai-image" element={<AIImageGenDemo />} />
             <Route path="/demo/nft-marketplace" element={<NFTMarketplaceDemo />} />
             <Route path="/demo/fitness-app" element={<FitnessAppDemo />} />
+            <Route path="/demo/job-platform" element={<JobPlatformDemo />} />
+            <Route path="/demo/admin-dashboard" element={<AdminDashboardDemo />} />
+            <Route path="/demo/ai-lms" element={<AILMSDemo />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
