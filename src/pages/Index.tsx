@@ -1,4 +1,4 @@
-import { Bot, Smartphone, Coins, Gamepad2, Download, ArrowRight, Github, Linkedin } from "lucide-react";
+import { Bot, Smartphone, Coins, Gamepad2, Download, ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TypingEffect } from "@/components/home/TypingEffect";
 import { TechStatusCard } from "@/components/home/TechStatusCard";
@@ -125,7 +125,7 @@ const Index = () => {
               {/* Social Icons */}
               <div className="flex gap-4 animate-fade-in stagger-4">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/DanielGebre1" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 glass rounded-xl text-muted-foreground hover:text-primary hover:border-primary/50 border border-transparent transition-all"
@@ -133,12 +133,18 @@ const Index = () => {
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/daniel-gebre-831176260/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 glass rounded-xl text-muted-foreground hover:text-primary hover:border-primary/50 border border-transparent transition-all"
                 >
                   <Linkedin className="h-5 w-5" />
+                </a>
+                <a 
+                  href="mailto:danielgebre011@gmail.com"
+                  className="p-3 glass rounded-xl text-muted-foreground hover:text-primary hover:border-primary/50 border border-transparent transition-all"
+                >
+                  <Mail className="h-5 w-5" />
                 </a>
               </div>
             </div>

@@ -23,7 +23,7 @@ const projects = [
     category: "ai",
     techStack: ["OpenAI", "LangChain", "Next.js", "Python", "Pinecone"],
     demoUrl: "/demo/ai-assistant",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-primary to-neon-blue",
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     category: "mobile",
     techStack: ["React Native", "Laravel", "Redis", "AWS", "PostgreSQL"],
     demoUrl: "/demo/super-app",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-accent to-neon-pink",
   },
   {
@@ -45,7 +45,7 @@ const projects = [
     category: "blockchain",
     techStack: ["Solidity", "Hardhat", "Web3.js", "IPFS", "TheGraph"],
     demoUrl: "/demo/blockchain",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-neon-purple to-accent",
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     category: "games",
     techStack: ["Unity", "C#", "Photon", "Blender", "Shader Graph"],
     demoUrl: "/demo/unity-game",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-neon-pink to-primary",
   },
   {
@@ -67,7 +67,7 @@ const projects = [
     category: "fullstack",
     techStack: ["React", "Node.js", "D3.js", "ClickHouse", "Redis"],
     demoUrl: "/demo/analytics",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-neon-blue to-primary",
   },
   {
@@ -78,7 +78,7 @@ const projects = [
     category: "ai",
     techStack: ["Stable Diffusion", "FastAPI", "Redis", "S3", "React"],
     demoUrl: "/demo/ai-image",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-primary to-accent",
   },
   {
@@ -89,7 +89,7 @@ const projects = [
     category: "blockchain",
     techStack: ["Solidity", "Next.js", "Moralis", "IPFS", "Polygon"],
     demoUrl: "/demo/nft-marketplace",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-accent to-neon-purple",
   },
   {
@@ -100,7 +100,7 @@ const projects = [
     category: "mobile",
     techStack: ["Flutter", "Firebase", "TensorFlow Lite", "HealthKit"],
     demoUrl: "/demo/fitness-app",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-neon-pink to-accent",
   },
   {
@@ -111,7 +111,7 @@ const projects = [
     category: "enterprise",
     techStack: ["React", "Next.js", "Laravel", "AI Resume Analyzer", "Cloud Storage"],
     demoUrl: "/demo/job-platform",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-primary to-neon-purple",
   },
   {
@@ -122,7 +122,7 @@ const projects = [
     category: "enterprise",
     techStack: ["React", "Laravel", "Charts", "RBAC", "System Logs"],
     demoUrl: "/demo/admin-dashboard",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-neon-blue to-neon-purple",
   },
   {
@@ -133,7 +133,7 @@ const projects = [
     category: "ai",
     techStack: ["Next.js", "Laravel", "AI Tutor", "Progress Tracking"],
     demoUrl: "/demo/ai-lms",
-    githubUrl: "#",
+    githubUrl: "https://github.com/DanielGebre1",
     gradient: "from-accent to-primary",
   },
 ];
