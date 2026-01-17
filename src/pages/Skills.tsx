@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Code, Layout, Server, Smartphone, Brain, Coins, Gamepad2, Wrench, Database, Cloud, Shield, Palette } from "lucide-react";
+import { Code, Layout, Server, Smartphone, Brain, Coins, Gamepad2, Wrench, Database, Cloud, Shield, Palette, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const skillCategories = [
@@ -239,9 +239,21 @@ export default function Skills() {
           ))}
         </div>
 
+        {/* Resume Download */}
+        <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <a
+            href="/resume.pdf"
+            download="Resume.pdf"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold text-lg hover:opacity-90 transition-opacity duration-200 shadow-lg hover:shadow-primary/25"
+          >
+            <Download className="h-5 w-5" />
+            Download Resume
+          </a>
+        </div>
+
         {/* Other Technologies */}
         <div className="mt-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          <h2 className="text-2xl font-bold text-foreground mb-6">Other Technologies</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6 text-center">Other Technologies</h2>
           <div className="flex flex-wrap gap-3">
             {[
               "REST APIs", "WebSockets", "gRPC", "Microservices", "Event Sourcing", 
