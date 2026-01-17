@@ -240,9 +240,9 @@ export default function Skills() {
         </div>
 
         {/* Other Technologies */}
-        <div className="mt-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+        <div className="mt-16 animate-fade-in text-center" style={{ animationDelay: '0.6s' }}>
           <h2 className="text-2xl font-bold text-foreground mb-6">Other Technologies</h2>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             {[
               "REST APIs", "WebSockets", "gRPC", "Microservices", "Event Sourcing", 
               "CQRS", "DDD", "TDD", "Clean Architecture", "OAuth2", "JWT", 

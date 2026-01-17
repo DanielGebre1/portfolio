@@ -1,0 +1,113 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2800 >>
+stream
+BT
+/F2 28 Tf
+72 720 Td
+(SOFTWARE ENGINEER) Tj
+0 -35 Td
+/F1 12 Tf
+(Full Stack Developer | AI & Blockchain Specialist | Game Developer) Tj
+0 -30 Td
+(Email: contact@example.com | Phone: +1 234 567 890) Tj
+0 -15 Td
+(Location: San Francisco, CA | GitHub: github.com/username | LinkedIn: linkedin.com/in/username) Tj
+0 -40 Td
+/F2 16 Tf
+(PROFESSIONAL SUMMARY) Tj
+0 -20 Td
+/F1 11 Tf
+(Versatile Software Engineer with 5+ years of experience building scalable applications across) Tj
+0 -15 Td
+(mobile, web, blockchain, and game development. Expertise in AI integration, distributed systems,) Tj
+0 -15 Td
+(and modern full-stack architectures. Proven track record of delivering production-ready solutions.) Tj
+0 -35 Td
+/F2 16 Tf
+(TECHNICAL SKILLS) Tj
+0 -20 Td
+/F1 11 Tf
+(Languages: JavaScript, TypeScript, Python, C#, PHP, Solidity, SQL, Go, Rust) Tj
+0 -15 Td
+(Frontend: React, Next.js, Vue.js, Tailwind CSS, Framer Motion, Three.js, Redux) Tj
+0 -15 Td
+(Backend: Node.js, Laravel, FastAPI, Express.js, GraphQL, Django, NestJS) Tj
+0 -15 Td
+(Database: PostgreSQL, MongoDB, Redis, MySQL, Firebase, Supabase, Prisma) Tj
+0 -15 Td
+(Mobile: React Native, Flutter, iOS Swift, Android Kotlin, Expo) Tj
+0 -15 Td
+(AI/ML: OpenAI API, LangChain, Pinecone, TensorFlow, Hugging Face, RAG Pipelines) Tj
+0 -15 Td
+(Blockchain: Solidity, Hardhat, Web3.js, Ethers.js, IPFS, TheGraph) Tj
+0 -15 Td
+(Game Dev: Unity, C#, Blender, Shader Graph, Photon Networking) Tj
+0 -15 Td
+(Cloud/DevOps: AWS, Docker, Kubernetes, Vercel, CI/CD, Terraform, GitHub Actions) Tj
+0 -35 Td
+/F2 16 Tf
+(EXPERIENCE) Tj
+0 -20 Td
+/F1 11 Tf
+(Senior Software Engineer | Tech Company | 2022 - Present) Tj
+0 -15 Td
+(- Led development of AI-powered applications using OpenAI, LangChain, and vector databases) Tj
+0 -15 Td
+(- Architected microservices handling 1M+ daily requests with 99.9% uptime) Tj
+0 -15 Td
+(- Mentored junior developers and established coding standards and best practices) Tj
+0 -25 Td
+(Full Stack Developer | Startup Inc | 2020 - 2022) Tj
+0 -15 Td
+(- Built React Native super-app with payments, delivery, and marketplace features) Tj
+0 -15 Td
+(- Developed blockchain crowdfunding platform with Solidity smart contracts) Tj
+0 -15 Td
+(- Implemented CI/CD pipelines reducing deployment time by 70%) Tj
+0 -25 Td
+(Game Developer | Game Studio | 2019 - 2020) Tj
+0 -15 Td
+(- Created 3D action game in Unity with procedural generation and AI enemies) Tj
+0 -15 Td
+(- Optimized game performance achieving 60 FPS on mobile devices) Tj
+0 -35 Td
+/F2 16 Tf
+(EDUCATION) Tj
+0 -20 Td
+/F1 11 Tf
+(Bachelor of Science in Computer Science | University | 2019) Tj
+0 -15 Td
+(Relevant Coursework: Data Structures, Algorithms, Machine Learning, Distributed Systems) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+0000003118 00000 n 
+0000003195 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3277
+%%EOF
