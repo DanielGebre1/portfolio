@@ -1,6 +1,5 @@
-import { Bot, Smartphone, Coins, Gamepad2, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Bot, Smartphone, Coins, Gamepad2, Briefcase, LayoutDashboard, GraduationCap } from "lucide-react";
+import { AIArchitecture, MobileArchitecture, BlockchainArchitecture, GameArchitecture } from "@/components/home/ArchitectureDiagrams";
 
 const caseStudies = [
   {
@@ -22,6 +21,7 @@ const caseStudies = [
       "Hybrid search (semantic + keyword) outperforms pure vector search",
       "Streaming responses dramatically improve perceived performance",
     ],
+    architecture: "ai",
   },
   {
     id: 2,
@@ -42,6 +42,7 @@ const caseStudies = [
       "Optimistic UI updates with proper reconciliation improve UX",
       "Feature flags are essential for gradual rollouts",
     ],
+    architecture: "mobile",
   },
   {
     id: 3,
@@ -62,6 +63,7 @@ const caseStudies = [
       "Layer 2 solutions essential for mainstream adoption",
       "Clear error messages reduce user support burden",
     ],
+    architecture: "blockchain",
   },
   {
     id: 4,
@@ -82,8 +84,128 @@ const caseStudies = [
       "Procedural + handcrafted hybrid creates best content variety",
       "Early performance profiling saves massive refactoring later",
     ],
+    architecture: "game",
+  },
+  {
+    id: 5,
+    title: "Job & Scholarship Platform",
+    year: "2024",
+    icon: <Briefcase className="h-6 w-6" />,
+    gradient: "from-primary to-neon-purple",
+    problem: "Job seekers and scholarship applicants lack a unified platform with intelligent matching and streamlined workflows.",
+    solution: "Built enterprise CRUD system with role-based access, AI resume screening, job-candidate matching scores, and complete application tracking.",
+    techStack: ["React", "Next.js", "Laravel", "AI Resume Analyzer", "Cloud Storage"],
+    challenges: [
+      "Designing complex role-based permission systems (Applicant, Employer, Admin)",
+      "Implementing accurate AI resume screening and matching algorithms",
+      "Building scalable notification system for application status updates",
+    ],
+    lessons: [
+      "Clear workflow visualization improves user completion rates",
+      "AI screening should augment, not replace, human decision-making",
+      "Real-time status updates reduce support inquiries significantly",
+    ],
+    architecture: "enterprise",
+  },
+  {
+    id: 6,
+    title: "Enterprise Admin Dashboard",
+    year: "2024",
+    icon: <LayoutDashboard className="h-6 w-6" />,
+    gradient: "from-neon-blue to-neon-purple",
+    problem: "Organizations needed centralized control over users, analytics, and system operations with granular permissions.",
+    solution: "Developed comprehensive admin system with RBAC, real-time analytics dashboards, system logs, and audit trails.",
+    techStack: ["React", "Laravel", "Charts", "RBAC", "System Logs"],
+    challenges: [
+      "Implementing flexible role-based access control without complexity",
+      "Optimizing dashboard performance with large datasets",
+      "Ensuring audit compliance with detailed activity logging",
+    ],
+    lessons: [
+      "Hierarchical permissions scale better than flat permission lists",
+      "Data aggregation at write-time improves dashboard load speed",
+      "Admin audit logs are critical for security and debugging",
+    ],
+    architecture: "enterprise",
+  },
+  {
+    id: 7,
+    title: "AI Learning Management System",
+    year: "2024",
+    icon: <GraduationCap className="h-6 w-6" />,
+    gradient: "from-accent to-primary",
+    problem: "Traditional LMS platforms lack personalization and fail to adapt to individual learning styles and paces.",
+    solution: "Created AI-powered LMS with intelligent tutoring, personalized learning paths, adaptive quizzes, and progress analytics.",
+    techStack: ["Next.js", "Laravel", "AI Tutor", "Progress Tracking", "Analytics"],
+    challenges: [
+      "Training AI tutor to provide contextually relevant explanations",
+      "Balancing adaptive difficulty without frustrating learners",
+      "Designing effective progress visualization for varied content types",
+    ],
+    lessons: [
+      "Micro-learning content keeps engagement higher than long modules",
+      "AI explanations work best when combined with human-created content",
+      "Gamification elements significantly boost course completion rates",
+    ],
+    architecture: "ai",
   },
 ];
+
+function getArchitectureDiagram(type: string) {
+  switch (type) {
+    case "ai":
+      return <AIArchitecture />;
+    case "mobile":
+      return <MobileArchitecture />;
+    case "blockchain":
+      return <BlockchainArchitecture />;
+    case "game":
+      return <GameArchitecture />;
+    case "enterprise":
+      return <EnterpriseArchitecture />;
+    default:
+      return <AIArchitecture />;
+  }
+}
+
+function EnterpriseArchitecture() {
+  return (
+    <svg width="200" height="120" viewBox="0 0 200 120" className="text-neon-purple">
+      {/* Frontend */}
+      <rect x="75" y="5" width="50" height="22" rx="4" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" />
+      <text x="100" y="19" textAnchor="middle" className="text-[7px] fill-current">Dashboard</text>
+      
+      {/* API Gateway */}
+      <rect x="60" y="35" width="80" height="20" rx="4" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="1" />
+      <text x="100" y="48" textAnchor="middle" className="text-[6px] fill-current">API Gateway + Auth</text>
+      
+      {/* Services */}
+      <rect x="10" y="65" width="40" height="18" rx="4" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" />
+      <text x="30" y="77" textAnchor="middle" className="text-[5px] fill-current">Users</text>
+      
+      <rect x="55" y="65" width="40" height="18" rx="4" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" />
+      <text x="75" y="77" textAnchor="middle" className="text-[5px] fill-current">Analytics</text>
+      
+      <rect x="100" y="65" width="40" height="18" rx="4" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" />
+      <text x="120" y="77" textAnchor="middle" className="text-[5px] fill-current">Logs</text>
+      
+      <rect x="145" y="65" width="45" height="18" rx="4" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" />
+      <text x="167" y="77" textAnchor="middle" className="text-[5px] fill-current">RBAC</text>
+      
+      {/* Database */}
+      <ellipse cx="100" cy="105" rx="35" ry="10" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" />
+      <text x="100" y="108" textAnchor="middle" className="text-[6px] fill-current">PostgreSQL</text>
+      
+      {/* Lines */}
+      <path d="M100 27 L100 35" stroke="currentColor" strokeWidth="1" />
+      <path d="M100 55 L30 65" stroke="currentColor" strokeWidth="1" strokeOpacity="0.5" />
+      <path d="M100 55 L75 65" stroke="currentColor" strokeWidth="1" strokeOpacity="0.5" />
+      <path d="M100 55 L120 65" stroke="currentColor" strokeWidth="1" strokeOpacity="0.5" />
+      <path d="M100 55 L167 65" stroke="currentColor" strokeWidth="1" strokeOpacity="0.5" />
+      <path d="M100 83 L100 95" stroke="currentColor" strokeWidth="1" strokeDasharray="2" />
+    </svg>
+  );
+}
 
 export default function CaseStudies() {
   return (
@@ -143,11 +265,14 @@ export default function CaseStudies() {
                     </div>
                   </div>
 
-                  {/* Architecture Placeholder */}
+                  {/* Architecture Diagram */}
                   <div className="mb-6 p-6 rounded-xl bg-muted/30 border border-border/30">
-                    <p className="text-sm text-muted-foreground text-center">
-                      📐 Architecture Diagram
-                    </p>
+                    <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4 text-center">
+                      Architecture Overview
+                    </h3>
+                    <div className="flex justify-center">
+                      {getArchitectureDiagram(study.architecture)}
+                    </div>
                   </div>
 
                   {/* Tech Stack */}

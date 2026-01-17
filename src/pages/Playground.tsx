@@ -1,6 +1,7 @@
 import { Bot, FileCode, Coins, Gamepad2, Play, ExternalLink, Lightbulb, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const demos = [
   {
@@ -10,6 +11,7 @@ const demos = [
     gradient: "from-primary to-neon-blue",
     status: "live",
     tags: ["GPT-4", "Streaming", "RAG"],
+    demoUrl: "/demo/ai-assistant",
   },
   {
     title: "Smart Contract Sandbox",
@@ -18,14 +20,16 @@ const demos = [
     gradient: "from-neon-purple to-accent",
     status: "live",
     tags: ["Solidity", "Testnet", "Web3"],
+    demoUrl: "/demo/blockchain",
   },
   {
     title: "Game AI Simulation",
     description: "Watch AI agents learn and compete in a simulated environment. Observe behavior trees and decision making.",
     icon: <Gamepad2 className="h-6 w-6" />,
     gradient: "from-neon-pink to-primary",
-    status: "coming-soon",
+    status: "live",
     tags: ["Unity WebGL", "ML Agents", "Pathfinding"],
+    demoUrl: "/demo/unity-game",
   },
   {
     title: "Code Experiments",
@@ -34,6 +38,7 @@ const demos = [
     gradient: "from-accent to-neon-pink",
     status: "live",
     tags: ["Canvas", "WebGL", "Algorithms"],
+    demoUrl: "/demo/analytics",
   },
 ];
 
@@ -104,18 +109,19 @@ export default function Playground() {
                     demo.status === "live" ? "btn-neon" : "glass opacity-50 cursor-not-allowed"
                   )}
                   disabled={demo.status !== "live"}
+                  asChild={demo.status === "live"}
                 >
-                  <span className="flex items-center gap-2">
-                    {demo.status === "live" ? (
-                      <>
+                  {demo.status === "live" ? (
+                    <Link to={demo.demoUrl}>
+                      <span className="flex items-center gap-2">
                         <Play className="h-4 w-4" />
                         Try it now
                         <ExternalLink className="h-4 w-4 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-                      </>
-                    ) : (
-                      "Coming Soon"
-                    )}
-                  </span>
+                      </span>
+                    </Link>
+                  ) : (
+                    <span>Coming Soon</span>
+                  )}
                 </Button>
               </div>
             </div>
@@ -159,12 +165,12 @@ export default function Playground() {
               Got a cool experiment or demo you'd like to see? I'm always looking for interesting challenges and creative projects to explore.
             </p>
             <Button asChild className="btn-neon group">
-              <a href="/contact">
+              <Link to="/contact">
                 <span className="flex items-center gap-2">
                   Share Your Idea
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </span>
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
