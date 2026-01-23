@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Clock, ArrowRight, Bot, Smartphone, Coins, Wrench, Mail, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const categories = [
   { id: "all", label: "All" },
@@ -14,83 +15,69 @@ const categories = [
   { id: "engineering", label: "Engineering", icon: <Wrench className="h-4 w-4" /> },
 ];
 
-const articles = [
-  {
-    id: 1,
-    title: "Building Production-Ready RAG Pipelines",
-    excerpt: "A deep dive into retrieval-augmented generation, from chunking strategies to hybrid search implementations.",
-    category: "ai",
-    readTime: "12 min",
-    date: "2024-01-15",
-    month: "Jan",
-    day: "15",
-    featured: true,
-    gradient: "from-primary to-neon-blue",
-  },
-  {
-    id: 2,
-    title: "Optimizing React Native for 60 FPS",
-    excerpt: "Performance techniques for smooth animations and responsive UIs in cross-platform mobile apps.",
-    category: "mobile",
-    readTime: "8 min",
-    date: "2024-01-10",
-    month: "Jan",
-    day: "10",
-    featured: true,
-    gradient: "from-accent to-neon-pink",
-  },
-  {
-    id: 3,
-    title: "Smart Contract Security Patterns",
-    excerpt: "Common vulnerabilities and battle-tested patterns for writing secure Solidity code.",
-    category: "blockchain",
-    readTime: "15 min",
-    date: "2024-01-05",
-    month: "Jan",
-    day: "05",
-    featured: false,
-    gradient: "from-neon-purple to-accent",
-  },
-  {
-    id: 4,
-    title: "Designing Microservices for Scale",
-    excerpt: "Architecture decisions, communication patterns, and lessons from scaling to millions of users.",
-    category: "engineering",
-    readTime: "10 min",
-    date: "2023-12-28",
-    month: "Dec",
-    day: "28",
-    featured: false,
-    gradient: "from-neon-blue to-primary",
-  },
-  {
-    id: 5,
-    title: "Fine-tuning LLMs for Domain-Specific Tasks",
-    excerpt: "Practical guide to customizing language models for specialized applications with limited data.",
-    category: "ai",
-    readTime: "14 min",
-    date: "2023-12-20",
-    month: "Dec",
-    day: "20",
-    featured: false,
-    gradient: "from-primary to-accent",
-  },
-  {
-    id: 6,
-    title: "State Management in Large Mobile Apps",
-    excerpt: "Comparing approaches and finding the right balance between simplicity and power.",
-    category: "mobile",
-    readTime: "9 min",
-    date: "2023-12-15",
-    month: "Dec",
-    day: "15",
-    featured: false,
-    gradient: "from-neon-pink to-neon-purple",
-  },
-];
+interface Article {
+  id: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  read_time: string;
+  created_at: string;
+  featured: boolean;
+  gradient: string;
+}
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [email, setEmail] = useState("");
+  const [subscribing, setSubscribing] = useState(false);
+
+  useEffect(() => {
+    fetchArticles();
+  }, []);
+
+  const fetchArticles = async () => {
+    const { data, error } = await supabase
+      .from("blog_posts")
+      .select("id, title, excerpt, category, read_time, created_at, featured, gradient")
+      .eq("published", true)
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Error fetching articles:", error);
+    } else {
+      setArticles(data || []);
+    }
+    setLoading(false);
+  };
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubscribing(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("newsletter-subscribe", {
+        body: { email },
+      });
+
+      if (error) throw error;
+
+      toast.success("Thanks for subscribing! You'll receive updates soon.");
+      setEmail("");
+    } catch (error: any) {
+      toast.error(error.message || "Failed to subscribe. Please try again.");
+    }
+    setSubscribing(false);
+  };
+
+  const formatDate = (dateStr: string) => {
+    const date = new Date(dateStr);
+    return {
+      day: date.getDate().toString().padStart(2, "0"),
+      month: date.toLocaleString("en-US", { month: "short" }),
+    };
+  };
 
   const filteredArticles = articles.filter(
     (article) => activeCategory === "all" || article.category === activeCategory
@@ -98,6 +85,14 @@ export default function Blog() {
 
   const featuredArticles = filteredArticles.filter((a) => a.featured);
   const regularArticles = filteredArticles.filter((a) => !a.featured);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-muted-foreground">Loading articles...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen py-20 px-6 lg:px-12">
@@ -147,8 +142,8 @@ export default function Blog() {
                     <div className="flex items-start justify-between mb-4">
                       <div className={cn("h-2 w-20 rounded-full bg-gradient-to-r", article.gradient)} />
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-foreground">{article.day}</div>
-                        <div className="text-xs text-muted-foreground uppercase">{article.month}</div>
+                        <div className="text-2xl font-bold text-foreground">{formatDate(article.created_at).day}</div>
+                        <div className="text-xs text-muted-foreground uppercase">{formatDate(article.created_at).month}</div>
                       </div>
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
@@ -158,7 +153,7 @@ export default function Blog() {
                     <div className="flex items-center justify-between text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
-                        {article.readTime}
+                        {article.read_time}
                       </div>
                       <span className="flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                         Read more <ArrowRight className="h-4 w-4" />
@@ -176,36 +171,42 @@ export default function Blog() {
           <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-6">
             All Articles
           </h2>
-          <div className="space-y-4">
-            {regularArticles.map((article, index) => (
-              <Link
-                key={article.id}
-                to={`/blog/${article.id}`}
-                className="group animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <article className="glass-hover rounded-xl p-4 flex items-center gap-4">
-                  <div className="flex flex-col items-center justify-center w-12 flex-shrink-0">
-                    <span className="text-lg font-bold text-foreground">{article.day}</span>
-                    <span className="text-xs text-muted-foreground uppercase">{article.month}</span>
-                  </div>
-                  <div className={cn("h-12 w-1 rounded-full bg-gradient-to-b flex-shrink-0", article.gradient)} />
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
-                      {article.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground truncate">{article.excerpt}</p>
-                  </div>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground flex-shrink-0">
-                    <span className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
-                      {article.readTime}
-                    </span>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
+          {filteredArticles.length === 0 ? (
+            <div className="glass rounded-xl p-8 text-center">
+              <p className="text-muted-foreground">No articles yet. Check back soon!</p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {regularArticles.map((article, index) => (
+                <Link
+                  key={article.id}
+                  to={`/blog/${article.id}`}
+                  className="group animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <article className="glass-hover rounded-xl p-4 flex items-center gap-4">
+                    <div className="flex flex-col items-center justify-center w-12 flex-shrink-0">
+                      <span className="text-lg font-bold text-foreground">{formatDate(article.created_at).day}</span>
+                      <span className="text-xs text-muted-foreground uppercase">{formatDate(article.created_at).month}</span>
+                    </div>
+                    <div className={cn("h-12 w-1 rounded-full bg-gradient-to-b flex-shrink-0", article.gradient)} />
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
+                        {article.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground truncate">{article.excerpt}</p>
+                    </div>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground flex-shrink-0">
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        {article.read_time}
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Stay Updated Section */}
@@ -219,21 +220,20 @@ export default function Blog() {
               Get the latest articles on AI, mobile development, blockchain, and engineering delivered straight to your inbox.
             </p>
             <form 
-              onSubmit={(e) => {
-                e.preventDefault();
-                toast.success("Thanks for subscribing! You'll receive updates soon.");
-              }}
+              onSubmit={handleSubscribe}
               className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
             >
               <Input 
                 type="email" 
                 placeholder="Enter your email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="glass border-muted-foreground/20 focus:border-primary"
                 required
               />
-              <Button type="submit" className="btn-neon flex-shrink-0">
+              <Button type="submit" className="btn-neon flex-shrink-0" disabled={subscribing}>
                 <Mail className="h-4 w-4 mr-2" />
-                Subscribe
+                {subscribing ? "Subscribing..." : "Subscribe"}
               </Button>
             </form>
           </div>
