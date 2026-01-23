@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -13,16 +14,35 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: { name, email, subject, message },
+      });
 
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+      if (error) throw error;
+
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+
+      (e.target as HTMLFormElement).reset();
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -114,17 +134,20 @@ export default function Contact() {
           <div className="space-y-8 animate-fade-in stagger-2">
             {/* Info Cards */}
             <div className="space-y-4">
-              <div className="glass rounded-xl p-6 flex items-center gap-4">
+              <a 
+                href="mailto:danielgebre011@gmail.com"
+                className="glass rounded-xl p-6 flex items-center gap-4 hover:bg-muted/30 transition-colors block"
+              >
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:hello@example.com" className="font-medium text-foreground hover:text-primary transition-colors">
-                    hello@example.com
-                  </a>
+                  <span className="font-medium text-foreground hover:text-primary transition-colors">
+                    danielgebre011@gmail.com
+                  </span>
                 </div>
-              </div>
+              </a>
 
               <div className="glass rounded-xl p-6 flex items-center gap-4">
                 <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -152,7 +175,7 @@ export default function Contact() {
               <h3 className="font-semibold text-foreground mb-4">Connect with me</h3>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/DanielGebre1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="h-12 w-12 rounded-lg glass flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
@@ -160,7 +183,7 @@ export default function Contact() {
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/daniel-gebre-831176260/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="h-12 w-12 rounded-lg glass flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
@@ -168,7 +191,7 @@ export default function Contact() {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:danielgebre011@gmail.com"
                   className="h-12 w-12 rounded-lg glass flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
                 >
                   <Mail className="h-5 w-5" />
