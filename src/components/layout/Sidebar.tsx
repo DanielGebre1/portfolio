@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Home,
@@ -11,8 +10,11 @@ import {
   ChevronLeft,
   ChevronRight,
   Search,
+  Shield,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeSwitcher } from "./ThemeSwitcher";
+import { useAuth } from "@/hooks/useAuth";
 
 const navItems = [
   { icon: Home, label: "Home", path: "/" },
@@ -32,6 +34,7 @@ interface SidebarProps {
 
 export function Sidebar({ onOpenSearch, isCollapsed, onCollapsedChange }: SidebarProps) {
   const location = useLocation();
+  const { user, isAdmin } = useAuth();
 
   return (
     <aside
@@ -101,11 +104,33 @@ export function Sidebar({ onOpenSearch, isCollapsed, onCollapsedChange }: Sideba
               </Link>
             );
           })}
+
+          {/* Admin Link */}
+          <Link
+            to={user ? "/admin" : "/auth"}
+            className={cn(
+              "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200",
+              isCollapsed && "justify-center",
+              location.pathname === "/admin" || location.pathname === "/auth"
+                ? "bg-primary/10 text-primary neon-border"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+            )}
+          >
+            <Shield size={20} className={location.pathname === "/admin" || location.pathname === "/auth" ? "text-primary" : ""} />
+            {!isCollapsed && (
+              <span className="text-sm font-medium">{user ? (isAdmin ? "Admin" : "Dashboard") : "Login"}</span>
+            )}
+          </Link>
         </nav>
+
+        {/* Theme Switcher */}
+        <div className="p-3 border-t border-border/30">
+          <ThemeSwitcher isCollapsed={isCollapsed} />
+        </div>
 
         {/* Status Card */}
         {!isCollapsed && (
-          <div className="p-3">
+          <div className="p-3 pt-0">
             <div className="glass rounded-xl p-4 border border-primary/20">
               <div className="flex items-center gap-2 mb-2">
                 <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />

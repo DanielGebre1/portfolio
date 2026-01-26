@@ -26,13 +26,15 @@ import JobPlatformDemo from "./pages/demos/JobPlatformDemo";
 import AdminDashboardDemo from "./pages/demos/AdminDashboardDemo";
 import AILMSDemo from "./pages/demos/AILMSDemo";
 import { AuthProvider } from "./hooks/useAuth";
+import { ThemeProvider } from "./hooks/useTheme";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <AuthProvider>
+    <ThemeProvider>
+      <TooltipProvider>
+        <AuthProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -64,6 +66,7 @@ const App = () => (
         </BrowserRouter>
       </AuthProvider>
     </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 
