@@ -9,85 +9,87 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
 endobj
 4 0 obj
-<< /Length 2800 >>
+<< /Length 3200 >>
 stream
 BT
-/F2 28 Tf
-72 720 Td
-(SOFTWARE ENGINEER) Tj
-0 -35 Td
-/F1 12 Tf
-(Full Stack Developer | AI & Blockchain Specialist | Game Developer) Tj
-0 -30 Td
-(Email: contact@example.com | Phone: +1 234 567 890) Tj
+/F2 24 Tf
+72 740 Td
+(Daniel Gebre) Tj
+0 -25 Td
+/F1 14 Tf
+(Junior Software Engineer) Tj
+0 -20 Td
+/F1 10 Tf
+(Addis Ababa | 0944292165 | danielgebre759@gmail.com) Tj
 0 -15 Td
-(Location: San Francisco, CA | GitHub: github.com/username | LinkedIn: linkedin.com/in/username) Tj
-0 -40 Td
-/F2 16 Tf
+(https://github.com/DanielGebre1 | https://www.linkedin.com/in/daniel-gebre-831176260/) Tj
+0 -35 Td
+/F2 14 Tf
 (PROFESSIONAL SUMMARY) Tj
-0 -20 Td
-/F1 11 Tf
-(Versatile Software Engineer with 5+ years of experience building scalable applications across) Tj
-0 -15 Td
-(mobile, web, blockchain, and game development. Expertise in AI integration, distributed systems,) Tj
-0 -15 Td
-(and modern full-stack architectures. Proven track record of delivering production-ready solutions.) Tj
-0 -35 Td
-/F2 16 Tf
+0 -18 Td
+/F1 10 Tf
+(Junior Software Engineer with hands-on experience in JavaScript, React, Laravel, and Node.js.) Tj
+0 -14 Td
+(Strong foundation in full-stack web development, RESTful APIs, and database management) Tj
+0 -14 Td
+(using MySQL and MongoDB. Passionate about building scalable applications, learning new) Tj
+0 -14 Td
+(technologies, and contributing to team-based projects.) Tj
+0 -30 Td
+/F2 14 Tf
 (TECHNICAL SKILLS) Tj
+0 -18 Td
+/F1 10 Tf
+(Languages: JavaScript \(ES6+\), C#, PHP, Python, SQL) Tj
+0 -14 Td
+(Frontend: React.js, Tailwind CSS) Tj
+0 -14 Td
+(Backend: Node.js \(Express\), Laravel, .NET Core) Tj
+0 -14 Td
+(Database Management: MySQL, MongoDB, Database Design & CRUD Operations) Tj
+0 -14 Td
+(Tools: Git & GitHub, Postman, Docker) Tj
+0 -30 Td
+/F2 14 Tf
+(KEY PROJECTS) Tj
 0 -20 Td
-/F1 11 Tf
-(Languages: JavaScript, TypeScript, Python, C#, PHP, Solidity, SQL, Go, Rust) Tj
-0 -15 Td
-(Frontend: React, Next.js, Vue.js, Tailwind CSS, Framer Motion, Three.js, Redux) Tj
-0 -15 Td
-(Backend: Node.js, Laravel, FastAPI, Express.js, GraphQL, Django, NestJS) Tj
-0 -15 Td
-(Database: PostgreSQL, MongoDB, Redis, MySQL, Firebase, Supabase, Prisma) Tj
-0 -15 Td
-(Mobile: React Native, Flutter, iOS Swift, Android Kotlin, Expo) Tj
-0 -15 Td
-(AI/ML: OpenAI API, LangChain, Pinecone, TensorFlow, Hugging Face, RAG Pipelines) Tj
-0 -15 Td
-(Blockchain: Solidity, Hardhat, Web3.js, Ethers.js, IPFS, TheGraph) Tj
-0 -15 Td
-(Game Dev: Unity, C#, Blender, Shader Graph, Photon Networking) Tj
-0 -15 Td
-(Cloud/DevOps: AWS, Docker, Kubernetes, Vercel, CI/CD, Terraform, GitHub Actions) Tj
-0 -35 Td
-/F2 16 Tf
-(EXPERIENCE) Tj
-0 -20 Td
-/F1 11 Tf
-(Senior Software Engineer | Tech Company | 2022 - Present) Tj
-0 -15 Td
-(- Led development of AI-powered applications using OpenAI, LangChain, and vector databases) Tj
-0 -15 Td
-(- Architected microservices handling 1M+ daily requests with 99.9% uptime) Tj
-0 -15 Td
-(- Mentored junior developers and established coding standards and best practices) Tj
-0 -25 Td
-(Full Stack Developer | Startup Inc | 2020 - 2022) Tj
-0 -15 Td
-(- Built React Native super-app with payments, delivery, and marketplace features) Tj
-0 -15 Td
-(- Developed blockchain crowdfunding platform with Solidity smart contracts) Tj
-0 -15 Td
-(- Implemented CI/CD pipelines reducing deployment time by 70%) Tj
-0 -25 Td
-(Game Developer | Game Studio | 2019 - 2020) Tj
-0 -15 Td
-(- Created 3D action game in Unity with procedural generation and AI enemies) Tj
-0 -15 Td
-(- Optimized game performance achieving 60 FPS on mobile devices) Tj
-0 -35 Td
-/F2 16 Tf
+/F2 11 Tf
+(Crowdfunding Platform | React, Laravel, MySQL) Tj
+0 -16 Td
+/F1 10 Tf
+(- Built a full-stack crowdfunding system with campaign creation, funding, and user authentication) Tj
+0 -14 Td
+(- Implemented REST APIs using Laravel) Tj
+0 -14 Td
+(- Designed relational database schema using MySQL) Tj
+0 -22 Td
+/F2 11 Tf
+(E-Commerce Inventory System | Laravel, MySQL, C#) Tj
+0 -16 Td
+/F1 10 Tf
+(- Built a robust backend using Laravel to manage over 1,000+ SKUs with real-time stock tracking) Tj
+0 -14 Td
+(- Developed a desktop synchronization tool in C# \(.NET\) that connects local warehouse) Tj
+0 -14 Td
+(  scanners to the cloud database) Tj
+0 -14 Td
+(- Optimized SQL queries to reduce page load times for inventory reports by 2 seconds) Tj
+0 -22 Td
+/F2 11 Tf
+(Personal Portfolio Website | React) Tj
+0 -16 Td
+/F1 10 Tf
+(- Created a responsive portfolio website using React) Tj
+0 -14 Td
+(- Showcased projects, skills, and contact information) Tj
+0 -14 Td
+(- Applied clean UI and mobile-first design principles) Tj
+0 -30 Td
+/F2 14 Tf
 (EDUCATION) Tj
-0 -20 Td
-/F1 11 Tf
-(Bachelor of Science in Computer Science | University | 2019) Tj
-0 -15 Td
-(Relevant Coursework: Data Structures, Algorithms, Machine Learning, Distributed Systems) Tj
+0 -18 Td
+/F1 10 Tf
+(Bachelor of Science in Software Engineering | Wollo University | 2025) Tj
 ET
 endstream
 endobj
@@ -104,10 +106,10 @@ xref
 0000000058 00000 n 
 0000000115 00000 n 
 0000000266 00000 n 
-0000003118 00000 n 
-0000003195 00000 n 
+0000003518 00000 n 
+0000003595 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-3277
+3677
 %%EOF
