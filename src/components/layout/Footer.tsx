@@ -12,7 +12,7 @@ const footerLinks = [
 const socialLinks = [
   { icon: Github, href: "https://github.com/DanielGebre1", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/daniel-gebre-831176260/", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:danielgebre011@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:danielgebre759@gmail.com", label: "Email" },
 ];
 
 export function Footer() {
