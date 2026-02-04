@@ -191,7 +191,7 @@ export default function Contact() {
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="mailto:danielgebre011@gmail.com"
+                  href="mailto:danielgebre759@gmail.com"
                   className="h-12 w-12 rounded-lg glass flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
                 >
                   <Mail className="h-5 w-5" />
