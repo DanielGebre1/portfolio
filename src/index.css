@@ -72,10 +72,14 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Space Grotesk', sans-serif;
-    background: linear-gradient(180deg, hsl(222 47% 6%), hsl(222 47% 4%));
+    background: hsl(222 47% 4%));
+    background-attachment:fixed;
     min-height: 100vh;
   }
 
+  html{
+    background: hsl(222 47% 4%);
+  }
   code, pre, .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
